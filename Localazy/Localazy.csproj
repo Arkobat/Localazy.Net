@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <PackageId>Localazy.Sdk</PackageId>
+        <Version>0.0.1</Version>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <Authors>Arkobat</Authors>
+        <Description>An unofficial SDK for integrating with Localazy</Description>
+        <RepositoryUrl>https://github.com/Arkobat/Localazy.Net</RepositoryUrl>
+        <RootNamespace>Localazy</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
+    </ItemGroup>
+
+</Project>
