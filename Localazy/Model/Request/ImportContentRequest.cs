@@ -91,45 +91,46 @@ public class ImportContent
     /// See /import/formats for all options.
     /// </summary>
     [JsonPropertyName("type")]
-    public string Type { get; set; } = null!;
+    public string Type { get; set; } = "api";
 
     /// <summary>
     /// Plural type to be used for encoding plurals in the output file.
     /// Available options depend on the type. See /import/formats below.
     /// </summary>
     [JsonPropertyName("plural")]
-    public string Plural { get; set; } = null!;
+    public string? Plural { get; set; } 
 
     /// <summary>
     /// Defines how to encode string arrays. Available options depend on the type. See /import/formats below.
     /// </summary>
     [JsonPropertyName("array")]
-    public string Array { get; set; } = null!;
+    public string? Array { get; set; } 
 
     /// <summary>
     /// Defines how to transform structured keys for formats into plain string ones for a format that dosn't support structured keys.
     /// Available options depend on the type. See /import/formats below.
     /// </summary>
     [JsonPropertyName("keyTransformer")]
-    public string KeyTransformer { get; set; } = null!;
+    public string? KeyTransformer { get; set; } 
 
     /// <summary>
     /// Key-value map of additional parameters that may be necessary for array, plural and keyTransformer. See /import/formats below.
     /// </summary>
     [JsonPropertyName("params")]
-    public Dictionary<string, string> Params { get; set; } = null!;
+    public Dictionary<string, string>? Params { get; set; }
 
     /// <summary>
     /// 	List of additional features for the given type. Available options depend on the type. See Localazy CLI documentation for available formats and their features.
     /// </summary>
     [JsonPropertyName("features")]
-    public List<string> Features { get; set; } = null!;
+    public List<string>? Features { get; set; }
 
     /// <summary>
     /// Strings in the given language to be imported. See “Language Object” below.
     /// </summary>
     [JsonExtensionData]
     public Dictionary<string, object> LanguageMap { get; set; } = null!;
+    //public required Dictionary<string, ImportLanguage> LanguageMap { get; set; } = null!;
 }
 
 public class ImportLanguage

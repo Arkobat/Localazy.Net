@@ -18,8 +18,8 @@ internal class LocalazyService : ILocalazyService
     {
         return await _httpWrapper
             .GetRequest("projects")
-            .AddQueryParameter(nameof(organization), organization.ToString())
-            .AddQueryParameter(nameof(languages), languages.ToString())
+            .AddQueryParameter(nameof(organization), organization.ToString().ToLower())
+            .AddQueryParameter(nameof(languages), languages.ToString().ToLower())
             .Get<List<Project>>();
     }
 
@@ -64,11 +64,11 @@ internal class LocalazyService : ILocalazyService
     {
         return await _httpWrapper
             .GetRequest($"projects/{projectId}/files/{fileId}/keys/{languageCode}")
-            .AddQueryParameter(nameof(deprecated), deprecated.ToString())
+            .AddQueryParameter(nameof(deprecated), deprecated.ToString().ToLower())
             .AddQueryParameter(nameof(limit), limit.ToString())
             .AddOptionalQueryParameter(nameof(next), next)
-            .AddQueryParameter(nameof(extraInfo), extraInfo.ToString())
-            .AddQueryParameter(nameof(noContent), noContent.ToString())
+            .AddQueryParameter(nameof(extraInfo), extraInfo.ToString().ToLower())
+            .AddQueryParameter(nameof(noContent), noContent.ToString().ToLower())
             .Get<FileContent>();
     }
 

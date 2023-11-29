@@ -3,14 +3,21 @@
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
         <PackageId>Localazy.Sdk</PackageId>
-        <Version>0.0.1</Version>
+        <Version>0.0.2</Version>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <Authors>Arkobat</Authors>
         <Description>An unofficial SDK for integrating with Localazy</Description>
         <RepositoryUrl>https://github.com/Arkobat/Localazy.Net</RepositoryUrl>
         <RootNamespace>Localazy</RootNamespace>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageIcon>localazy_icon.png</PackageIcon>
     </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="../README.md" Pack="true" PackagePath="." />
+        <None Include="localazy_icon.png" Pack="true" PackagePath="." />
+    </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
