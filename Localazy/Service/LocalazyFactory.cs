@@ -2,11 +2,6 @@
 
 namespace Localazy.Service;
 
-public interface ILocalazyFactory
-{
-    ILocalazyService CreateService(string apiKey);
-}
-
 public class LocalazyFactory : ILocalazyFactory
 {
     public ILocalazyService CreateService(string apiKey)
