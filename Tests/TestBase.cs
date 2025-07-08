@@ -9,6 +9,7 @@ public abstract class TestBase
 {
     public ServiceProvider ServiceProvider { get; private set; } = null!;
     public ILocalazyService LocalazyService { get; private set; } = null!;
+    public ILocalazyFactory LocalazyFactory { get; private set; } = null!;
 
     [SetUp]
     public async Task Setup()
@@ -27,6 +28,7 @@ public abstract class TestBase
 
         ServiceProvider = services;
         LocalazyService = services.GetRequiredService<ILocalazyService>();
+        LocalazyFactory = services.GetRequiredService<ILocalazyFactory>();
 
         await PostSetup();
     }
