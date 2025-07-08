@@ -31,7 +31,7 @@ public class ImportTests : TestBase
 
         await TestImport();
         await TestUpdate();
-        await TestDelete();
+        //TODO await TestDelete();
     }
 
     private async Task TestImport()
@@ -118,10 +118,6 @@ public class ImportTests : TestBase
             Assert.That(updatedKey.Key.Single(), Is.EqualTo(key));
             Assert.That(updatedKey.Value.SingleValue(), Is.EqualTo("Good day World!"));
         });
-    }
-
-    private async Task TestDelete()
-    {
     }
 
     /// <summary>

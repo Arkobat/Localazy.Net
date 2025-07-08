@@ -1,0 +1,34 @@
+name: build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  DOTNET_VERSION: '8.0'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Install dependencies
+        run: dotnet restore Localazy.Net.sln
+
+      - name: Build
+        run: dotnet build Localazy.Net.sln /warnaserror --configuration Release --no-restore
+
+      #- name: Test
+      #  run: dotnet test Localazy.Net.sln --no-restore --verbosity normal
+      #  env:
+      #    LOCALAZY_API_KEY: ${{ secrets.LOCALAZY_API_KEY }}
