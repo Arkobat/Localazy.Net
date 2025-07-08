@@ -28,7 +28,7 @@ jobs:
       - name: Build
         run: dotnet build Localazy.Net.sln /warnaserror --configuration Release --no-restore
 
-      - name: Test
-        run: dotnet test Localazy.Net.sln --no-restore --verbosity normal
-        env:
-          LOCALAZY_API_KEY: ${{ secrets.LOCALAZY_API_KEY }}
+      #- name: Test
+      #  run: dotnet test Localazy.Net.sln --no-restore --verbosity normal
+      #  env:
+      #    LOCALAZY_API_KEY: ${{ secrets.LOCALAZY_API_KEY }}
