@@ -15,7 +15,8 @@ public static class LocalazyInitializer
             })
             .AddHttpClient<HttpWrapper>(c => c.BaseAddress = new Uri("https://api.localazy.com"))
             .Services
-            .AddScoped<ILocalazyService, LocalazyService>();
+            .AddScoped<ILocalazyService, LocalazyService>()
+            .AddScoped<ILocalazyFactory, LocalazyFactory>();
 
         return services;
     }
