@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <PackageId>Localazy.Sdk</PackageId>
-        <Version>0.0.2</Version>
+        <Version>0.0.3</Version>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <Authors>Arkobat</Authors>
@@ -12,6 +12,7 @@
         <RootNamespace>Localazy</RootNamespace>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageIcon>localazy_icon.png</PackageIcon>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>

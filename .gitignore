@@ -7,3 +7,4 @@ riderModule.iml
 .env
 **/appsettings.Development.json
 *DotSettings.user
+/nupkg/
