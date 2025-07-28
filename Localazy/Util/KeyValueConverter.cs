@@ -4,8 +4,20 @@ using Localazy.Model.Response;
 
 namespace Localazy.Util;
 
+/// <summary>
+/// JSON converter for handling different types of key values (single, multi, and keyed values) in Localazy responses.
+/// </summary>
 public class KeyValueConverter : JsonConverter<KeyValue>
 {
+    /// <summary>
+    /// Reads and converts JSON to a <see cref="KeyValue"/> object.
+    /// </summary>
+    /// <param name="reader">The <see cref="Utf8JsonReader"/> to read from.</param>
+    /// <param name="typeToConvert">The type to convert to.</param>
+    /// <param name="options">The serializer options.</param>
+    /// <returns>A <see cref="KeyValue"/> object representing the JSON data.</returns>
+    /// <exception cref="NotImplementedException">Thrown when object type conversion is not yet implemented.</exception>
+    /// <exception cref="ArgumentOutOfRangeException">Thrown when an unsupported JSON token type is encountered.</exception>
     public override KeyValue? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         if (reader.TokenType == JsonTokenType.String) return new SingleKeyValue {Value = reader.GetString()!};
@@ -28,6 +40,13 @@ public class KeyValueConverter : JsonConverter<KeyValue>
         throw new ArgumentOutOfRangeException(nameof(reader.TokenType));
     }
 
+    /// <summary>
+    /// Writes a <see cref="KeyValue"/> object to JSON.
+    /// </summary>
+    /// <param name="writer">The <see cref="Utf8JsonWriter"/> to write to.</param>
+    /// <param name="value">The <see cref="KeyValue"/> to serialize.</param>
+    /// <param name="options">The serializer options.</param>
+    /// <exception cref="NotImplementedException">Thrown as this method is not yet implemented.</exception>
     public override void Write(Utf8JsonWriter writer, KeyValue value, JsonSerializerOptions options)
     {
         switch (value)

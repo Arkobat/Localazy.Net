@@ -2,11 +2,20 @@ using System.Text.Json.Serialization;
 
 namespace Localazy.Model.Response;
 
+/// <summary>
+/// Response containing glossary information.
+/// </summary>
 public class GlossaryResponse
 {
+    /// <summary>
+    /// Gets or sets the glossary data.
+    /// </summary>
     [JsonPropertyName("glossaries")] public Glossary Glossary { get; set; } = null!;
 }
 
+/// <summary>
+/// Represents a glossary containing terms and their translations.
+/// </summary>
 public class Glossary
 {
     /// <summary>
@@ -46,6 +55,9 @@ public class Glossary
     public List<GlossaryTerm> Term { get; set; } = null!;
 }
 
+/// <summary>
+/// Represents a single glossary term with its language and value.
+/// </summary>
 public class GlossaryTerm
 {
     /// <summary>

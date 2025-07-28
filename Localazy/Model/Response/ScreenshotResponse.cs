@@ -2,6 +2,9 @@ using System.Text.Json.Serialization;
 
 namespace Localazy.Model.Response;
 
+/// <summary>
+/// Response containing screenshot information and metadata.
+/// </summary>
 public class ScreenshotResponse
 {
     /// <summary>

@@ -2,6 +2,9 @@ using System.Text.Json.Serialization;
 
 namespace Localazy.Model.Response;
 
+/// <summary>
+/// Response containing information about a newly created project.
+/// </summary>
 public class CreateProjectResponse
 {
     /// <summary>
@@ -11,6 +14,9 @@ public class CreateProjectResponse
     public string ProjectId { get; set; } = null!;
 }
 
+/// <summary>
+/// Represents a Localazy project with its metadata and configuration.
+/// </summary>
 public class Project
 {
     /// <summary>

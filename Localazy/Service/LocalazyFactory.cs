@@ -2,22 +2,19 @@
 
 namespace Localazy.Service;
 
-public class LocalazyFactory : ILocalazyFactory
+/// <summary>
+/// Factory implementation for creating instances of <see cref="ILocalazyService"/>.
+/// </summary>
+public class LocalazyFactory(IHttpClientFactory httpClientFactory) : ILocalazyFactory
 {
-    private readonly IHttpClientFactory _httpClientFactory;
-    
-    public LocalazyFactory(IHttpClientFactory httpClientFactory)
-    {
-        _httpClientFactory = httpClientFactory;
-    }
-    
+    /// <inheritdoc />
     public ILocalazyService CreateService(string apiKey)
     {
         var config = new LocalazyConfig
         {
             ApiKey = apiKey
         };
-        var client = _httpClientFactory.CreateClient(nameof(LocalazyFactory));
+        var client = httpClientFactory.CreateClient(nameof(LocalazyFactory));
         client.BaseAddress = new Uri("https://api.localazy.com/");
         var httpWrapper = new HttpWrapper(client, config);
         return new LocalazyService(httpWrapper);

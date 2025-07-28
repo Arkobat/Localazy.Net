@@ -2,11 +2,20 @@ using System.Text.Json.Serialization;
 
 namespace Localazy.Model.Response;
 
+/// <summary>
+/// Response containing metadata URLs for release tags.
+/// </summary>
 public class MetadataResponse
 {
+    /// <summary>
+    /// Gets or sets the list of metadata URLs.
+    /// </summary>
     [JsonPropertyName("metadataUrls")] public List<Metadata> MetadataUrls { get; set; } = null!;
 }
 
+/// <summary>
+/// Represents metadata information for a release tag.
+/// </summary>
 public class Metadata
 {
     /// <summary>

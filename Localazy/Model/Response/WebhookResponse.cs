@@ -2,11 +2,20 @@ using System.Text.Json.Serialization;
 
 namespace Localazy.Model.Response;
 
+/// <summary>
+/// Response containing a list of webhook items.
+/// </summary>
 public class WebhookResponse
 {
+    /// <summary>
+    /// Gets or sets the list of webhook items.
+    /// </summary>
     [JsonPropertyName("items")] public List<WebhookItem> Items { get; set; } = null!;
 }
 
+/// <summary>
+/// Represents a webhook configuration item.
+/// </summary>
 public class WebhookItem
 {
     /// <summary>

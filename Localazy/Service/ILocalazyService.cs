@@ -3,6 +3,9 @@ using Localazy.Model.Response;
 
 namespace Localazy.Service;
 
+/// <summary>
+/// Defines the contract for Localazy API service operations.
+/// </summary>
 public interface ILocalazyService
 {
     #region Projects

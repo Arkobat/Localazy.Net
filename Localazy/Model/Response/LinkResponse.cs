@@ -2,6 +2,9 @@ using System.Text.Json.Serialization;
 
 namespace Localazy.Model.Response;
 
+/// <summary>
+/// Response containing link information with pagination support.
+/// </summary>
 public class LinkResponse
 {
     /// <summary>
@@ -17,6 +20,9 @@ public class LinkResponse
     public string? Next { get; set; }
 }
 
+/// <summary>
+/// Represents a link between keys in Localazy projects.
+/// </summary>
 public class Link
 {
     /// <summary>
